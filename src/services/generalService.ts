@@ -1,7 +1,13 @@
-import axios from 'axios';
+// generalService.ts
+import axios from "axios";
 
-class generalService{
-    
+export async function postComponentName(componentName: string): Promise<any> {
+  try {
+    console.log(componentName);
+    const response = await axios.post("your-api-endpoint", { componentName });
+    return response.data;
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
+  }
 }
-
-export default new generalService;
